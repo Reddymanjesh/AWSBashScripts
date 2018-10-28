@@ -1,0 +1,1 @@
+/usr/local/bin/describeinst.sh $(aws ec2 describe-instances --filter "Name=private-ip-address,Values=$(ifconfig | head -n2  | grep "addr:" | awk '{print $2}' | tr -d 'addr:')" | grep "InstanceId" | awk '{print $2}' |  tr -d '"\|,')
