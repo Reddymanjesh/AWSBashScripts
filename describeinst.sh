@@ -16,9 +16,9 @@ echo -n "Availability_Zone =  "
 aws ec2 describe-instances --instance-id $instanceid | jq '.Reservations[].Instances[].Placement.AvailabilityZone'
 echo -n "SubnetId          =  "
 aws ec2 describe-instances --instance-id $instanceid | jq '.Reservations[].Instances[].NetworkInterfaces[].SubnetId'
-echo -n "SecurityName     =  "
+echo -n "SecurityName     =   "
 aws ec2 describe-instances --instance-id $instanceid | jq '.Reservations[].Instances[].SecurityGroups[].GroupName'
-echo -n "Security Group    = "
+echo -n "Security Group    =  "
 aws ec2 describe-instances --instance-id $instanceid | jq '.Reservations[].Instances[].SecurityGroups[].GroupId'
 echo -n "PrivateIpAddress  =  "
 aws ec2 describe-instances --instance-id $instanceid | jq '.Reservations[].Instances[].PrivateIpAddress'
